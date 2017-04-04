@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 import moneyed
 from djmoney.models.fields import MoneyField
-# Create your models here.
+
+from PIL import Image
 
 class MarketCategory(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -19,6 +20,8 @@ class MarketOffer(models.Model):
     authors = models.ManyToManyField(User, related_name='author')
     created_at = models.DateTimeField(default=timezone.now)
     content = models.TextField()
+
+    image = models.ImageField()
 
     def __str__(self):
         return self.item_name
