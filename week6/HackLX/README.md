@@ -36,3 +36,9 @@ Keep in mind:
       class Foo(BaseFoo, SomeMixin):
           pass
       SomeMixi is a base class, extended by BaseFoo, extended by Foo
+   - One of the first methods to be called when processing a request is dispatch()
+
+
+- MRO is an acronym for Method Resolution Order.
+
+- reverse_lazy?

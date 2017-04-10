@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from .models import Offer, Category
 
 from django.views.generic.edit import FormView, CreateView
@@ -15,33 +15,19 @@ def index(request):
     return render(request, 'website/index.html', locals())
 
 
-# def add_offer(request):
-#     form = OfferCreateModelForm()
-#
-#     if request.method == 'POST':
-#         form = OfferCreateModelForm(request.POST, request.FILES)
-#
-#         import ipdb; ipdb.set_trace()
-#         if form.is_valid():
-#             form = form.save(commit=False)
-#             form.author = request.user
-#             form.save()
-#             return redirect(reverse('website:index'))
-#
-#     return render(request, 'website/add_offer.html', locals())
-
 class AddOfferCreateView(LoginRequiredMixin, CreateView):
-
     template_name = 'website/add_offer.html'
-    success_url = reverse_lazy('website:index' )
-    class Meta:
-        model = Offer
-        fields = ['title', 'description', 'category', 'author', 'image']
+    success_url = reverse_lazy('website:index')
+    model = Offer
+    fields = ('title', 'description', 'category', 'image')
+    import ipdb; ipdb.set_trace()
 
-     def form_valid(self, form):
+    def form_valid(self, form):
         form.instance.author = self.request.user
         return super(AddOfferCreateView, self).form_valid(form)
 
+    def get_success_url(self):
+        return success_url
 
 
 @login_required(login_url='website:login')
