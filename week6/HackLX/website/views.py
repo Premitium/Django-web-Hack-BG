@@ -4,27 +4,46 @@ from django.urls import reverse
 from .models import Offer, Category
 from .forms import OfferCreateModelForm
 
+from django.views.generic.edit import FormView, CreateView
+
+from django.views import View
+
 
 def index(request):
     offers = Offer.objects.select_related('category', 'author').all()
 
     return render(request, 'website/index.html', locals())
 
+
+# def add_offer(request):
+#     form = OfferCreateModelForm()
+#
+#     if request.method == 'POST':
+#         form = OfferCreateModelForm(request.POST, request.FILES)
+#
+#         import ipdb; ipdb.set_trace()
+#         if form.is_valid():
+#             form = form.save(commit=False)
+#             form.author = request.user
+#             form.save()
+#             return redirect(reverse('website:index'))
+#
+#     return render(request, 'website/add_offer.html', locals())
+
 @login_required(login_url='website:login')
-def add_offer(request):
-    form = OfferCreateModelForm()
+class AddOfferFormView(FormView):
 
-    if request.method == 'POST':
-        form = OfferCreateModelForm(request.POST, request.FILES)
+    template_name = 'website/add_offer.html'
+    success_url = reverse_lazy('website:index' )
+    class Meta:
+        model = Offer
+        fields = ['title', 'description', 'category', 'author', 'image']
 
-        import ipdb; ipdb.set_trace()
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.author = request.user
-            form.save()
-            return redirect(reverse('website:index'))
+     def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(AddOfferFormView, self).form_valid(form)
 
-    return render(request, 'website/add_offer.html', locals())
+
 
 @login_required(login_url='website:login')
 def edit_offer(request, pk):
