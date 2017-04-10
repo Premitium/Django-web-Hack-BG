@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .models import Offer, Category
-from .forms import OfferCreateModelForm
 
 from django.views.generic.edit import FormView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import View
 
@@ -30,8 +30,7 @@ def index(request):
 #
 #     return render(request, 'website/add_offer.html', locals())
 
-@login_required(login_url='website:login')
-class AddOfferFormView(FormView):
+class AddOfferCreateView(LoginRequiredMixin, CreateView):
 
     template_name = 'website/add_offer.html'
     success_url = reverse_lazy('website:index' )
@@ -41,7 +40,7 @@ class AddOfferFormView(FormView):
 
      def form_valid(self, form):
         form.instance.author = self.request.user
-        return super(AddOfferFormView, self).form_valid(form)
+        return super(AddOfferCreateView, self).form_valid(form)
 
 
 
