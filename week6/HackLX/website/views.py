@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Offer, Category
 from django.views.generic import ListView
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import services
@@ -44,12 +45,23 @@ class EditOfferUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('website:index')
 
+
 class DeleteOfferView(LoginRequiredMixin, DeleteView):
     model = Offer
     template_name = 'website/delete_offer.html'
 
     def get_success_url(self):
         return reverse_lazy('website:index')
+
+class GetStatisticsView(LoginRequiredMixin, TemplateView):
+    model = Offer
+    template_name = 'website/statistics.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.count()
+        context['titles'] = services.get_categoty_names(Category)
+        return context
 
 def get_statistics(request):
     # TODO: Move logic in services
