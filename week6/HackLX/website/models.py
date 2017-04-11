@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.name
+
 
 class Offer(models.Model):
     title = models.CharField(max_length=200)
@@ -15,3 +18,6 @@ class Offer(models.Model):
     author = models.ForeignKey(User)
 
     image = models.ImageField()
+
+    def __str__(self):
+        return self.title
