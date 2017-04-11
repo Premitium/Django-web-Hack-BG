@@ -3,8 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Offer, Category
 from django.views.generic import ListView
-from django.views.generic.edit import UpdateView, CreateView
+from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from . import services
 
 
 class OfferListView(ListView):
@@ -43,10 +44,12 @@ class EditOfferUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('website:index')
 
-def delete_offer(request, pk):
-    offer = get_object_or_404(Offer, pk=int(pk))
-    offer.delete()
-    return redirect(reverse('website:index'))
+class DeleteOfferView(LoginRequiredMixin, DeleteView):
+    model = Offer
+    template_name = 'website/delete_offer.html'
+
+    def get_success_url(self):
+        return reverse_lazy('website:index')
 
 def get_statistics(request):
     # TODO: Move logic in services

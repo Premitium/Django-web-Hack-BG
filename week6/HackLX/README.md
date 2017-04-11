@@ -1,5 +1,6 @@
 <snippet>
-  <content><![CDATA[
+  <content>
+  <![CDATA[
 # ${1:Class Based Views}
 
 # HackLX
