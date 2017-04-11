@@ -62,16 +62,3 @@ class GetStatisticsView(LoginRequiredMixin, TemplateView):
         context['categories'] = Category.objects.count()
         context['titles'] = services.get_categoty_names(Category)
         return context
-
-def get_statistics(request):
-    # TODO: Move logic in services
-    categories = Category.objects.all()
-    categories_result = {}
-
-    for category in categories:
-        categories_result[category.name] = category.offer_set.count()
-
-
-    # TODO: Add more statistics information
-
-    return render(request, 'website/statistics.html', locals())
