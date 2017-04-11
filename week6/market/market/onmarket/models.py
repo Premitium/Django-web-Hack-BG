@@ -17,7 +17,8 @@ class MarketCategory(models.Model):
 class MarketOffer(models.Model):
     item_name = models.CharField(max_length=255)
     price = MoneyField(max_digits=10, decimal_places=2, default_currency='USD')
-    authors = models.ManyToManyField(User, related_name='author')
+    category = models.ForeignKey(MarketCategory, on_delete=models.CASCADE, related_name='category')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author')
     created_at = models.DateTimeField(default=timezone.now)
     content = models.TextField()
 

@@ -1,18 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import MarketCategory, MarketOffer
+
 def index(request):
 
-    return render(request, 'onmarket/index.html', locals())
+    offer = MarketOffer.objects.all();
 
-#
-# def index(request):
-#     if not request.session.get('counter'):
-#         request.session['counter'] = 0
-#
-#     request.session['counter'] += 1
-#
-#     posts = BlogPost.objects.all()
-#     tags = Tag.objects.all()
-#
-#     return render(request, 'blog/index.html', locals())
+    return render(request, 'onmarket/index.html', locals())
