@@ -13,8 +13,7 @@ class BlogPost(models.Model):
     content = models.TextField()
     title = models.CharField(max_length=255, unique=True)
 
-    tags = models.ManyToManyField(Tag,
-                                  related_name='posts')
+    tags = models.ManyToManyField(Tag, related_name='posts')
 
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField()

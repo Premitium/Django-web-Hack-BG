@@ -6,7 +6,11 @@ from django.views.generic import ListView
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from . import services
+from . import services, mixins
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class OfferListView(ListView):
@@ -62,3 +66,30 @@ class GetStatisticsView(LoginRequiredMixin, TemplateView):
         context['categories'] = Category.objects.count()
         context['titles'] = services.get_categoty_names(Category)
         return context
+
+class PendingView(ListView):
+    model = Offer
+    template_name = 'website/pending_offer.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['pending'] = services.get_offer_status_pending(Offer)
+        return context
+
+class ApprovedAndRejectedOffers(ListView):
+    model = Offer
+    template_name = 'website/approved_rejected_offer.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['approved_rejected'] = services.get_offer_status_approved_rejected(Offer)
+        return context
+
+
+#"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InNwLnBhcnZhbm92QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2ltZW9ucGFydmFub3YiLCJleHAiOjE0OTI3MDk5OTl9.c7ff2-Tb-sEY7yHArniFd2Sm43ONS-bWrBHXyJ5XzuQ"
+class PermissionGranted(APIView):
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+    def get(self):
+        pass
+
+    def post(self):
+        pass
