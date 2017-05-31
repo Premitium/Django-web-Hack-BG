@@ -14,13 +14,7 @@
       <h3><a href="#">{{ post.title }}</a></h3>
     </div>
     <div class="post-info">
-      <span class="post-autor">Post by:
-        <a href="#">
-          {% for author in post.authors.all %}
-            {{ author }},
-          {% endfor %}
-        </a></span>
-      <span class="post-category">in <a href="#">{% include "partial/tags.html" with tags=post.tags.all only %}</a></span>
+      <span class="post-category">in category: <a href="#">{% include "partial/tags.html" with tags=post.tags.all only %}</a></span>
     </div>
     <div class="post-description"
       {% autoescape off %}
