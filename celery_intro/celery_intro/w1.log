@@ -1,0 +1,631 @@
+[2017-05-11 11:43:31,749: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-05-11 11:43:31,764: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 11:43:32,793: INFO/MainProcess] mingle: all alone
+[2017-05-11 11:43:32,810: WARNING/MainProcess] /Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2017-05-11 11:43:32,810: INFO/MainProcess] w1@Simeons-MBP ready.
+[2017-05-11 12:12:24,481: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 12:29:51,078: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 12:39:22,328: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 469, in blocking_read
+    return self.on_inbound_frame(frame)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/method_framing.py", line 68, in on_frame
+    callback(channel, method_sig, buf, None)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 473, in on_inbound_method
+    method_sig, payload, content,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/abstract_channel.py", line 142, in dispatch_method
+    listener(*args)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 595, in _on_close
+    (class_id, method_id), ConnectionError)
+amqp.exceptions.ConnectionForced: (0, 0): (320) CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'
+[2017-05-11 12:39:22,348: WARNING/MainProcess] /Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py:304: AMQPDeprecationWarning: The .transport attribute on the connection was accessed before
+the connection was established.  This is supported for now, but will
+be deprecated in amqp 2.2.0.
+
+Since amqp 2.0 you have to explicitly call Connection.connect()
+before using the connection.
+
+  W_FORCE_CONNECT.format(attr=attr)))
+[2017-05-11 12:39:22,362: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 2.00 seconds...
+
+[2017-05-11 12:39:24,381: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 4.00 seconds...
+
+[2017-05-11 12:39:28,400: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 6.00 seconds...
+
+[2017-05-11 12:39:34,440: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 8.00 seconds...
+
+[2017-05-11 12:39:42,474: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 10.00 seconds...
+
+[2017-05-11 12:39:52,511: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 12.00 seconds...
+
+[2017-05-11 12:40:04,549: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 14.00 seconds...
+
+[2017-05-11 12:40:18,611: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-05-11 12:40:18,623: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-11 12:40:19,640: INFO/MainProcess] mingle: all alone
+[2017-05-11 12:41:36,403: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 12:41:36,404: ERROR/MainProcess] Control command error: BrokenPipeError(32, 'Broken pipe')
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/pidbox.py", line 42, in on_message
+    self.node.handle_message(body, message)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/pidbox.py", line 129, in handle_message
+    return self.dispatch(**body)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/pidbox.py", line 112, in dispatch
+    ticket=ticket)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/pidbox.py", line 135, in reply
+    serializer=self.mailbox.serializer)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/pidbox.py", line 265, in _publish_reply
+    **opts
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+BrokenPipeError: [Errno 32] Broken pipe
+[2017-05-11 13:02:20,904: INFO/MainProcess] Received task: youtuber.tasks.download_url[89ba0484-e96d-439f-92d6-0d38fc2f9e4a]  
+[2017-05-11 13:21:38,164: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 13:22:13,168: INFO/MainProcess] Received task: youtuber.tasks.download_url[d1e942aa-c3b2-4260-b44e-67a91d463897]  
+[2017-05-11 13:24:33,403: INFO/MainProcess] Received task: youtuber.tasks.download_url[5e0b76f6-46ba-44db-ab28-e463aefc79fa]  
+[2017-05-11 13:24:42,846: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 13:24:47,679: INFO/MainProcess] Received task: youtuber.tasks.download_url[7ce97185-2ca2-42a4-b0c6-0f7574a09694]  
+[2017-05-11 13:25:51,711: INFO/MainProcess] sync with celery@Simeons-MBP
+[2017-05-11 13:25:58,901: INFO/MainProcess] Received task: youtuber.tasks.download_url[483c0a99-7b2e-4be4-b184-634074e72f2e]  
+[2017-05-11 15:18:20,020: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-11 16:24:47,015: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-11 16:32:46,014: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-11 17:28:23,410: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-11 20:21:13,011: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-11 22:16:49,020: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-12 06:17:12,816: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-12 06:34:34,355: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-12 06:50:15,015: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-12 06:52:41,666: INFO/MainProcess] missed heartbeat from celery@Simeons-MBP
+[2017-05-12 08:37:09,919: INFO/MainProcess] Received task: youtuber.tasks.download_url[483eb601-ada3-439a-bb1a-bc1ce7f9c2be]  
+[2017-05-12 08:37:23,457: INFO/MainProcess] sync with celery@simeons-mbp
+[2017-05-12 08:37:39,973: INFO/MainProcess] Received task: youtuber.tasks.download_url[97ca3fe4-389f-4f39-a9c7-9bc6da93533e]  
+[2017-05-12 08:38:40,821: INFO/MainProcess] sync with celery@simeons-mbp
+[2017-05-12 08:38:54,517: INFO/MainProcess] Received task: youtuber.tasks.download_url[e6aa012c-ed72-4164-98a5-207c9620ad42]  
+[2017-05-12 08:40:49,994: INFO/MainProcess] sync with celery@simeons-mbp
+[2017-05-12 08:40:55,244: INFO/MainProcess] Received task: youtuber.tasks.download_url[f8f43c0b-65d8-4f7d-b6c7-60104c468e7c]  
+[2017-05-12 08:41:50,055: INFO/MainProcess] Received task: youtuber.tasks.convert_to_mp3[220bbe10-67cd-4b24-9b7b-c61d8d57a15d]  
+[2017-05-12 09:05:06,357: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 469, in blocking_read
+    return self.on_inbound_frame(frame)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/method_framing.py", line 68, in on_frame
+    callback(channel, method_sig, buf, None)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 473, in on_inbound_method
+    method_sig, payload, content,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/abstract_channel.py", line 142, in dispatch_method
+    listener(*args)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 595, in _on_close
+    (class_id, method_id), ConnectionError)
+amqp.exceptions.ConnectionForced: (0, 0): (320) CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'
+[2017-05-12 09:05:06,388: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 2.00 seconds...
+
+[2017-05-12 09:05:08,400: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 4.00 seconds...
+
+[2017-05-12 09:05:12,423: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 6.00 seconds...
+
+[2017-05-12 09:05:18,452: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 8.00 seconds...
+
+[2017-05-12 09:05:26,485: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 10.00 seconds...
+
+[2017-05-12 09:05:36,525: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 12.00 seconds...
+
+[2017-05-12 09:05:48,576: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 14.00 seconds...
+
+[2017-05-12 09:06:02,617: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 16.00 seconds...
+
+[2017-05-12 09:06:18,681: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 18.00 seconds...
+
+[2017-05-12 09:06:36,731: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 20.00 seconds...
+
+[2017-05-12 09:06:56,796: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 22.00 seconds...
+
+[2017-05-12 09:07:18,873: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 24.00 seconds...
+
+[2017-05-12 09:07:42,945: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 26.00 seconds...
+
+[2017-05-12 09:08:09,031: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 28.00 seconds...
+
+[2017-05-12 09:08:37,111: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 30.00 seconds...
+
+[2017-05-12 09:09:07,191: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:09:39,283: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:10:11,387: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:10:43,487: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:11:15,604: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:11:47,707: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:12:19,807: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:12:51,895: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:13:23,970: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:13:56,063: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:14:28,156: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:15:00,241: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:15:32,319: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 32.00 seconds...
+
+[2017-05-12 09:15:36,002: ERROR/MainProcess] Process 'PoolWorker-4' pid:64558 exited with 'signal 15 (SIGTERM)'
+[2017-05-12 09:15:36,015: ERROR/MainProcess] Process 'PoolWorker-3' pid:64557 exited with 'signal 15 (SIGTERM)'
+[2017-05-12 09:15:36,028: ERROR/MainProcess] Process 'PoolWorker-2' pid:64556 exited with 'signal 15 (SIGTERM)'
+[2017-05-12 09:15:36,039: ERROR/MainProcess] Process 'PoolWorker-1' pid:64555 exited with 'signal 15 (SIGTERM)'
+[2017-05-12 09:15:45,145: ERROR/MainProcess] Pool callback raised exception: OperationalError('could not connect to server: Connection refused\n\tIs the server running on host "localhost" (127.0.0.1) and accepting\n\tTCP/IP connections on port 5432?\ncould not connect to server: Connection refused\n\tIs the server running on host "localhost" (::1) and accepting\n\tTCP/IP connections on port 5432?\n',)
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 333, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 261, in connect
+    return self.connection
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 802, in connection
+    self._connection = self._establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 757, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/pyamqp.py", line 130, in establish_connection
+    conn.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 294, in connect
+    self.transport.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 120, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 161, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/worker.py", line 203, in start
+    self.blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 370, in start
+    return self.obj.start()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/connection.py", line 21, in start
+    c.connection = c.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 405, in connect
+    conn = self.connection_for_read(heartbeat=self.amqheartbeat)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 412, in connection_for_read
+    self.app.connection_for_read(heartbeat=heartbeat))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 436, in ensure_connected
+    callback=maybe_shutdown,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 405, in ensure_connection
+    callback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 345, in retry_over_time
+    sleep(1.0)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/apps/worker.py", line 284, in _handle_request
+    raise exc(exitcode)
+celery.exceptions.WorkerShutdown: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1224, in mark_as_worker_lost
+    human_status(exitcode)),
+billiard.exceptions.WorkerLostError: Worker exited prematurely: signal 15 (SIGTERM).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1748, in safe_apply_callback
+    fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/request.py", line 366, in on_failure
+    self.id, exc, request=self, store_result=self.store_errors,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 163, in mark_as_failure
+    traceback=traceback, request=request)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 309, in store_result
+    request=request, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/backends/database.py", line 29, in _store_result
+    meta=meta,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 50, in _inner
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 119, in store_result
+    obj, created = self.get_or_create(task_id=task_id, defaults=fields)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 463, in get_or_create
+    return self.get(**lookup), False
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 373, in get
+    num = len(clone)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 1102, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 874, in execute_sql
+    cursor = self.connection.cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+[2017-05-12 09:15:54,190: ERROR/MainProcess] Pool callback raised exception: OperationalError('could not connect to server: Connection refused\n\tIs the server running on host "localhost" (127.0.0.1) and accepting\n\tTCP/IP connections on port 5432?\ncould not connect to server: Connection refused\n\tIs the server running on host "localhost" (::1) and accepting\n\tTCP/IP connections on port 5432?\n',)
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 333, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 261, in connect
+    return self.connection
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 802, in connection
+    self._connection = self._establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 757, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/pyamqp.py", line 130, in establish_connection
+    conn.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 294, in connect
+    self.transport.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 120, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 161, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/worker.py", line 203, in start
+    self.blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 370, in start
+    return self.obj.start()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/connection.py", line 21, in start
+    c.connection = c.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 405, in connect
+    conn = self.connection_for_read(heartbeat=self.amqheartbeat)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 412, in connection_for_read
+    self.app.connection_for_read(heartbeat=heartbeat))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 436, in ensure_connected
+    callback=maybe_shutdown,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 405, in ensure_connection
+    callback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 345, in retry_over_time
+    sleep(1.0)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/apps/worker.py", line 284, in _handle_request
+    raise exc(exitcode)
+celery.exceptions.WorkerShutdown: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1224, in mark_as_worker_lost
+    human_status(exitcode)),
+billiard.exceptions.WorkerLostError: Worker exited prematurely: signal 15 (SIGTERM).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1748, in safe_apply_callback
+    fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/request.py", line 366, in on_failure
+    self.id, exc, request=self, store_result=self.store_errors,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 163, in mark_as_failure
+    traceback=traceback, request=request)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 309, in store_result
+    request=request, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/backends/database.py", line 29, in _store_result
+    meta=meta,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 50, in _inner
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 119, in store_result
+    obj, created = self.get_or_create(task_id=task_id, defaults=fields)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 463, in get_or_create
+    return self.get(**lookup), False
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 373, in get
+    num = len(clone)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 1102, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 874, in execute_sql
+    cursor = self.connection.cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+[2017-05-12 09:16:03,229: ERROR/MainProcess] Pool callback raised exception: OperationalError('could not connect to server: Connection refused\n\tIs the server running on host "localhost" (127.0.0.1) and accepting\n\tTCP/IP connections on port 5432?\ncould not connect to server: Connection refused\n\tIs the server running on host "localhost" (::1) and accepting\n\tTCP/IP connections on port 5432?\n',)
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 333, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 261, in connect
+    return self.connection
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 802, in connection
+    self._connection = self._establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 757, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/transport/pyamqp.py", line 130, in establish_connection
+    conn.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/connection.py", line 294, in connect
+    self.transport.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 120, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/amqp/transport.py", line 161, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/worker.py", line 203, in start
+    self.blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 370, in start
+    return self.obj.start()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/connection.py", line 21, in start
+    c.connection = c.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 405, in connect
+    conn = self.connection_for_read(heartbeat=self.amqheartbeat)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 412, in connection_for_read
+    self.app.connection_for_read(heartbeat=heartbeat))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/consumer/consumer.py", line 436, in ensure_connected
+    callback=maybe_shutdown,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/connection.py", line 405, in ensure_connection
+    callback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/kombu/utils/functional.py", line 345, in retry_over_time
+    sleep(1.0)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/apps/worker.py", line 284, in _handle_request
+    raise exc(exitcode)
+celery.exceptions.WorkerShutdown: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1224, in mark_as_worker_lost
+    human_status(exitcode)),
+billiard.exceptions.WorkerLostError: Worker exited prematurely: signal 15 (SIGTERM).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/billiard/pool.py", line 1748, in safe_apply_callback
+    fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/worker/request.py", line 366, in on_failure
+    self.id, exc, request=self, store_result=self.store_errors,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 163, in mark_as_failure
+    traceback=traceback, request=request)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/celery/backends/base.py", line 309, in store_result
+    request=request, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/backends/database.py", line 29, in _store_result
+    meta=meta,
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 50, in _inner
+    return fun(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django_celery_results/managers.py", line 119, in store_result
+    obj, created = self.get_or_create(task_id=task_id, defaults=fields)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 463, in get_or_create
+    return self.get(**lookup), False
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 373, in get
+    num = len(clone)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 1102, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 874, in execute_sql
+    cursor = self.connection.cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/django/db/backends/postgresql/base.py", line 176, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/simeonparvanov/Desktop/python101/virtenv/celery_intro/lib/python3.5/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
