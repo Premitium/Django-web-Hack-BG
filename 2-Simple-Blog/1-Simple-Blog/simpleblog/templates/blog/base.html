@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+	<link rel="shortcut icon" href="images/favicon.png">
+	<title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" type="text/css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+	<!-- Vendor css -->
+	<link href="{% static 'vendor/owlcarousel/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+	<link href="{% static 'vendor/magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet">
+
+	<!-- Template base -->
+  <link href="{% static 'blog/css/theme-base.css' %}" rel="stylesheet">
+
+  <!-- Template elements -->
+  <link href="{% static 'blog/css/theme-elements.css' %}" rel="stylesheet">
+
+  <!-- Responsive classes -->
+  <link href="{% static 'blog/css/responsive.css'%}" rel="stylesheet">
+
+
+<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+
+	<!-- Template color -->
+	<link href="{% static 'blog/css/color-variations/blue.css' %}" rel="stylesheet" type="text/css" media="screen" title="blue">
+
+	<!-- LOAD GOOGLE FONTS -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+	<!-- BLOG FONT & STYLE -->
+	<link href="http://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+	<link href="{% static 'blog/css/style-blog.css' %}" media="screen" rel="stylesheet" type="text/css" />
+
+    <!--VENDOR SCRIPT-->
+    <script src="{% static 'vendor/jquery-modern/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/plugins-compressed.js' %}"></script>
+
+</head>
+<style type="text/css">
+	{% block style %}
+	{% endblock %}
+</style>
+<body class="wide">
+	<!--SITE LOADER-->
+	<div class="loader-wrapper">
+		<div class="loader"> <img width="40" src="{% static 'images/svg-loaders/puff.svg' %}" alt=""> <span class="loader-title">Page is loading, just a sec...</span> </div>
+	</div>
+	<!--END: SITE LOADER-->
+
+	<!--WRAPPER-->
+	<div class="wrapper">
+		<!--HEADER-->
+		<header id="header" class="header-mini header-dark">
+			<div id="header-wrap">
+				<div class="container">
+
+					<!--LOGO-->
+					<div id="logo">
+						<a href="{% url 'blog:index' %}" class="logo" data-dark-logo="{% static 'images/logo-dark.png' %}">
+              <img src="{% static 'images/logo-dark.png' %}" alt="Polo Logo"> </a>
+					</div>
+					<!--END: LOGO-->
+
+					<!--MOBILE MENU -->
+					<div class="nav-main-menu-responsive">
+						<button class="lines-button x">
+							<span class="lines"></span>
+						</button>
+					</div>
+					<!--END: MOBILE MENU -->
+
+					<!--TOP SEARCH -->
+					<div id="top-search"> <a id="top-search-trigger"><i class="fa fa-search"></i><i class="fa fa-close"></i></a>
+						<form action="search-results-page.html" method="get">
+							<input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
+						</form>
+					</div>
+					<!--END: TOP SEARCH -->
+
+					<!--NAVIGATION-->
+					<div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
+						<div class="container">
+							<nav class="main-menu mega-menu" id="mainMenu">
+								<ul class="main-menu nav nav-pills">
+									<li><a href="index.html"><i class="fa fa-home"></i></a> </li>
+									<li class="dropdown"> <a href="#">About </a> </li>
+									<li class="dropdown"> <a href="#">Blog</a> </li>
+									<li class="dropdown"> <a href="#">Contact</a> </li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!--END: NAVIGATION-->
+				</div>
+			</div>
+		</header>
+		<!--END: HEADER-->
+
+<!-- CONTENT -->
+<section class="p-t-40">
+	<div class="container">
+		<div class="row">
+			<!-- Blog post-->
+			<div class="post-content post-thumbnail col-md-9">
+        {% block content %}
+
+        {% endblock content %}
+  		</div>
+    </div>
+	</div>
+</section>
+<!-- END: SECTION -->
+
+<!-- FOOTER -->
+<footer class="background-dark text-grey" id="footer">
+	<div class="copyright-content">
+		<div class="container">
+			<div class="row">
+        {% block footer %}
+      	{% endblock %}
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- END: FOOTER -->
+	</div>
+	<!-- END: WRAPPER -->
+
+	<!-- GO TOP BUTTON -->
+	<a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="{% static 'js/theme-functions.js' %}"></script>
+
+	<!-- Custom js file -->
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
