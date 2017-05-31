@@ -1,2 +1,3 @@
 # Simple Blog
-Simeons homework
+Added templates to blog.
+Working with statics.
