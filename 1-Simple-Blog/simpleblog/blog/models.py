@@ -22,3 +22,12 @@ class BlogPost(models.Model):
         self.updated_at = timezone.now()
 
         super().save(*args, **kwargs)
+
+class Comment(models.Model):
+    author_email = models.EmailField()
+    content = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+    blogpost = models.ForeignKey(BlogPost, related_name='comments')
+
+    def __str__(self):
+        return self.author_email

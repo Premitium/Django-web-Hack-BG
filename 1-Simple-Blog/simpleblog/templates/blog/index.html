@@ -16,7 +16,9 @@ I am the index page.
     </thead>
   {% for post in posts %}
     <tr>
-      <td><a href="">{{ post.title }}</a></td>
+      {%comment%}
+      {%endcomment%}
+      <td><a href={% url 'blog:blog_post_detail' post.id %}>{{ post.title }}</a></td>
       <td>
         {% include "partial/tags.html" with tags=post.tags.all only %}
       </td>

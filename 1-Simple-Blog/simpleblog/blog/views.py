@@ -57,18 +57,7 @@ def login_view(request):
 def profile_view(request):
     return render(request, 'blog/profile.html', locals())
 
-
-
-# login_required_views = [profile_view]
-
-
-# for view in login_required_views:
-#     fname = view.__name__
-#     local_definitions = locals()
-
-#     f = local_definitions.get(fname)
-
-#     f = login_required(f)
-
-#     local_definitions[fname] = f
-
+def detail_post_view(request, blog_post_id):
+    post = BlogPost.objects.filter(id=blog_post_id).first()
+    import ipdb; ipdb.set_trace()
+    return render(request, 'blog/blog_post_detail.html', locals())

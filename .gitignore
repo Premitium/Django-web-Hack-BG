@@ -6,4 +6,5 @@
 /week6/market/lib/
 .DS_Store
 /week6/market/pip-selfcheck.json
-/__pycache__
+/__pycache__/
+1-Simple-Blog/simpleblog/blog/__pycache__/

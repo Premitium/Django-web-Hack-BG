@@ -17,7 +17,8 @@ def create_blog_post(*,
         return None, errors
 
     post = BlogPost.objects.create(title=title, content=content)
-
+    import ipdb; ipdb.set_trace()
+    
     for tag in Tag.objects.filter(id__in=tags):
         post.tags.add(tag)
 
