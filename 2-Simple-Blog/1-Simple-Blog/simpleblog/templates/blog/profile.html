@@ -1,1 +1,12 @@
-{{ request.user }}
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+  <div>
+    <span>User Name: {{ request.user }}</span>
+  </div>
+  <form action="{% url 'blog:logout' %}" method="">
+    {% csrf_token %}
+    <input type="SUBMIT" value="Logout">
+</form>
+{% endblock content %}

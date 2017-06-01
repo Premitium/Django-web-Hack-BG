@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse, reverse_lazy
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import BlogPost, Tag
 from .forms import BlogPostCreateModelForm, LoginForm, BlogPostRegistrationForm
@@ -14,13 +14,16 @@ def index(request):
         request.session['counter'] = 0
 
     request.session['counter'] += 1
-
-    posts = BlogPost.objects.all()
+    if request.user.is_authenticated:
+        posts = services.get_all_blogs()
+    else:
+        posts = services.get_private_posts()
+        
     tags = Tag.objects.all()
 
     return render(request, 'blog/index.html', locals())
 
-
+@login_required(login_url=reverse_lazy('blog:index'))
 def create_blog_post(request):
     form = BlogPostCreateModelForm()
 
@@ -54,15 +57,16 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    return redirect(reverse('index'))
+    return redirect(reverse('blog:index'))
 
 @login_required(login_url=reverse_lazy('blog:index'))
 def profile_view(request):
-    
+
     return render(request, 'blog/profile.html', locals())
 
 def single_post(request, id):
     post = BlogPost.objects.filter(id=id).first()
+    # BlogPost.objects.filter(is_private=True)
 
     return render(request, 'blog/single_post.html', locals())
 

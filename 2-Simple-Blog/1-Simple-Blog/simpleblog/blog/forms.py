@@ -9,7 +9,6 @@ class LoginForm(forms.Form):
     username = forms.CharField(label='Username')
     password = forms.CharField(widget=forms.PasswordInput)
 
-
 class BlogPostCreateModelForm(forms.ModelForm):
     use_required_attribute = False
 
@@ -20,7 +19,7 @@ class BlogPostCreateModelForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = ('title', 'content', 'tags')
+        fields = ('title', 'content', 'tags', 'is_private')
 
 
 class BlogPostCreateForm(forms.Form):

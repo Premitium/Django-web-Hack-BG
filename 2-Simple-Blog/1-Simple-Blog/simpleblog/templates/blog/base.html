@@ -100,9 +100,15 @@
 							<nav class="main-menu mega-menu" id="mainMenu">
 								<ul class="main-menu nav nav-pills">
 									<li><a href="index.html"><i class="fa fa-home"></i></a> </li>
-									<li class="dropdown"> <a href="#">About </a> </li>
-									<li class="dropdown"> <a href="#">Blog</a> </li>
-									<li class="dropdown"> <a href="#">Contact</a> </li>
+									<li> <a href="{% url 'blog:create' %}">Create Post</a> </li>
+									<li> <a href="{% url 'blog:index' %}">Blog</a> </li>
+									{% if user.is_authenticated %}
+										<li> <a href="{% url 'blog:logout' %}">Logout</a> </li>
+									{% else %}
+										<li> <a href="{% url 'blog:login' %}">Login</a> </li>
+									{% endif %}
+
+
 								</ul>
 							</nav>
 						</div>

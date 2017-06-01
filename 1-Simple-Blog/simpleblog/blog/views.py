@@ -59,5 +59,4 @@ def profile_view(request):
 
 def detail_post_view(request, blog_post_id):
     post = BlogPost.objects.filter(id=blog_post_id).first()
-    import ipdb; ipdb.set_trace()
     return render(request, 'blog/blog_post_detail.html', locals())
