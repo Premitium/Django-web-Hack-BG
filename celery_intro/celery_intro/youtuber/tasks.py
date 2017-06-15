@@ -16,7 +16,7 @@ from sendgrid.helpers.mail import Email, Content, Substitution, Mail
 
 @shared_task
 def send_email(song_url, to_email):
-    sg = sendgrid.SendGridAPIClient(apikey='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')
+    sg = sendgrid.SendGridAPIClient(apikey='')
     if not sg.apikey:
         raise ValueError('Could not find SENDGRID_API_KEY environment variable!')
     from_email = Email("sp.parvanov@gmail.com")
